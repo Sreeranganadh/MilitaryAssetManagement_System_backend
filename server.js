@@ -11,12 +11,12 @@ const dashboardRoutes = require('./routes/dashboard');
 
 const app = express();
 
-// app.use(cors({
-//   origin: "https://military-asset-managementsystem.netlify.app",
-//   methods: "GET,POST,PUT,DELETE",
-//   credentials: true
-// }));
-app.use(cors())
+app.use(cors({
+  origin: "https://military-asset-managementsystem.netlify.app",
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
+}));
+
 app.use(express.json());
 
 // API route handlers
