@@ -12,10 +12,11 @@ const dashboardRoutes = require('./routes/dashboard');
 const app = express();
 
 app.use(cors({
-  origin: "https://military-asset-managementsystem.netlify.app",
+  origin: FRONTEND_URL,
   methods: "GET,POST,PUT,DELETE",
   credentials: true
 }));
+
 
 app.use(express.json());
 
@@ -31,7 +32,7 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // Serve index.html for all other
 app.get('/*any', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/build/'));
 });
 
 const PORT = process.env.PORT || 5000;
